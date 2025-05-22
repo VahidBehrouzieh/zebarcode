@@ -59,13 +59,13 @@ const JsonConverter = () => {
         />
       </div>
 
-      <div className='flex flex-col mt-5 gap-2'>
-        <button onClick={() => convert(transformToXml, 'xml')} className='btn'>to xml</button>
-        <button onClick={() => convert(transformToYaml, 'yaml')} className='btn'>to yaml</button>
-        <button onClick={() => convert(transformToCsv, 'csv')} className='btn'>to csv</button>
-        <button onClick={() => convert(transformToToml, 'toml')} className='btn'>to toml</button>
-        <button onClick={() => convert(transformToJava, 'java')} className='btn'>to java</button>
-        <button onClick={() => convert(transformToKotlin, 'kotlin')} className='btn'>to kotlin</button>
+      <div className='flex flex-wrap mt-5 gap-2 w-80 justify-center h-40'>
+        <button onClick={() => convert(transformToXml, 'xml')} className='w-36 h-10 cursor-pointer flex items-center justify-center px-4  transition rounded-lg hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r text-white from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'>to xml</button>
+        <button onClick={() => convert(transformToYaml, 'yaml')} className='w-36 h-10 cursor-pointer flex items-center justify-center px-4  transition rounded-lg hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r text-white from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'>to yaml</button>
+        <button onClick={() => convert(transformToCsv, 'csv')} className='w-36 h-10 cursor-pointer flex items-center justify-center px-4  transition rounded-lg hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r text-white from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'>to csv</button>
+        <button onClick={() => convert(transformToToml, 'toml')} className='w-36 h-10 cursor-pointer flex items-center justify-center px-4  transition rounded-lg hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r text-white from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'>to toml</button>
+        <button onClick={() => convert(transformToJava, 'java')} className='w-36 h-10 cursor-pointer flex items-center justify-center px-4  transition rounded-lg hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r text-white from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'>to java</button>
+        <button onClick={() => convert(transformToKotlin, 'kotlin')} className='w-36 h-10 cursor-pointer flex items-center justify-center px-4  transition rounded-lg hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r text-white from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'>to kotlin</button>
       </div>
 
       <div className='w-5/12'>
@@ -73,7 +73,7 @@ const JsonConverter = () => {
           language={outputLang}
           value={output}
           onChange={() => {}}
-          
+          readOnly={true}
           options={{ readOnly: true }}
         />
       </div>

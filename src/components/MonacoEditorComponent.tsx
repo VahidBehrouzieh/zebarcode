@@ -130,13 +130,20 @@ const MonacoEditorComponent = ({
     >
       {/* Toolbar */}
       <div className="flex gap-2 p-2 bg-gray-900 border-b border-gray-700">
-        {!readOnly && (
+        {/* {!readOnly && (
           <>
             <button onClick={handleCopy} className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">Copy</button>
             <button onClick={handlePaste} className="px-3 py-1 bg-yellow-500 text-white text-sm rounded hover:bg-yellow-600">Paste</button>
             <button onClick={handleSave} className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700">Save</button>
             <button onClick={() => setShowModal(true)} className="px-3 py-1 bg-purple-600 text-white text-sm rounded hover:bg-purple-700">Open</button>
           </>
+        )} */}
+        
+        <button onClick={handleCopy} className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">Copy</button>
+        <button onClick={handlePaste} className="px-3 py-1 bg-yellow-500 text-white text-sm rounded hover:bg-yellow-600">Paste</button>
+        <button onClick={handleSave} className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700">Save</button>
+        {!readOnly && (
+          <button onClick={() => setShowModal(true)} className="px-3 py-1 bg-purple-600 text-white text-sm rounded hover:bg-purple-700">Open</button>
         )}
       </div>
 
