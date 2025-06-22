@@ -1,0 +1,30 @@
+image: node:18-alpine
+
+stages:
+  - build
+  - deploy
+
+# مرحله Build برای ساخت فایل‌های استاتیک با next export
+build_site:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - npm run export   # خروجی در پوشه out/
+  artifacts:
+    paths:
+      - out/   # نگه‌داری خروجی برای مرحله بعد
+
+# مرحله Deploy برای ارسال فایل‌ها به سرور از طریق FTP
+deploy_via_ftp:
+  stage: deploy
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache lftp
+  script:
+    - lftp -c "
+        open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST;
+        mirror -R -e out /public_html;
+      "
+  only:
+    - main
